@@ -1,27 +1,116 @@
-
-.BTCContainer {
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 90vw;
- 
-  font-family: 'Poppins', sans-serif;
+:root {
+  --text-color: #333;
+  --link-color: #1e4b75;
+  --link-color-hover: #101578;
+  --width-default: calc(100% - 10vw);
+  --width-max: 1100px;
+  --section-spacing: calc(2 * var(--gap));
+  --gap: 25px;
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-size-default: 17px;
+  --line-height-default: 1.65;
 }
-
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-default);
+  line-height: var(--line-height-default);
+}
+/*************************
+    ACCESSIBILITY
+*************************/
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+/*************************
+    CONTAINERS
+*************************/
+.BTCContainer {
+  max-width: var(--width-max);
+  width: var(--width-default);
+  margin: 0 auto;
+}
 .CalcContainer {
   display: flex;
   margin-bottom: 2rem;
   align-content: stretch;
 }
-
-
-.flexCalibration {
-  flex-basis: 500px;
+/*************************
+  TEXT
+*************************/
+p {
+    margin: 0 0 1rem 0;
 }
+h2, h3, h4, h5, h6 {
+	margin: 1em 0 .5em 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+}
+h1 {
+  font-size: 3.5rem;
+}
+p:last-child, ol:last-child, ul:last-child {
+	margin-bottom: 0;
+}
+h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+	margin-top: 0;
+}
+/* TABLE */
+table {
+  border-collapse: collapse;
+}
+caption {
+  text-align: left;
+  font-size: 1.5rem;
+}
+th, td{
+  border-bottom: 1px solid #ddd;;
+  padding: 1px;
+  width: 100px;
+  overflow: auto;
+}
+th {
+    background-color: #555555;
+  color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+/*************************
+  LINKS
+*************************/
+a {
+	color: var(--link-color);
+	text-decoration: underline;
+	transition: all .3s;
+}
+a:hover, a:focus {
+	color: var(--link-color-hover);
+}
+/*************************
+  FORMS ELEMENTS
+*************************/
+button, input, textarea, select {
+	font-family: inherit;
+}
+
+
 
 .button  {
   flex:1;
-  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
+}
+
+.flexCalibration {
+  flex-basis: 500px;
 }
 
 .App-logo {
@@ -71,7 +160,6 @@
   }
 
 .footer {
-  /*position: fixed;*/
   display:flex;
   bottom:0;
   margin-top: 50px;
@@ -82,51 +170,6 @@
   align-items: center;
   justify-content: center;
 
-}
-
-table {
-  margin-top: 25px;
-  border-collapse: collapse;
-  width: 800px;
-  text-align: center;
-  font-size: 1em;
-  table-layout: fixed;
-}
-
-caption {
-  text-align: left;
-}
-th, td{
-  border-bottom: 1px solid #ddd;;
-  padding: 1px;
-  width: 100px;
-  overflow: auto;
-}
-
-th {
-    background-color: rgb(85, 85, 85);
-    color: white;
-}
-
-tr:nth-child(even) {background-color: #f2f2f2;}
-
-
-h1 {
-  font-family:  'Poppins', sans-serif;
-  font-size: 3.5rem;
-}
-
-p, li {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-}
-.footer p {
-  font-size: 1rem;
-}
-
-caption {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
 }
 
 .Release {
@@ -142,11 +185,6 @@ align-content: left;
   width: 300px;
 }
 
-label {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.0rem;
-}
-
 .avChart {
   width: 800px;
 }
@@ -157,10 +195,6 @@ label {
   align-items: center;
   justify-content: space-around;
 
-}
-
-.quote {
-  font-family: 'Poppins', sans-serif;
 }
 
 .flexChart {
